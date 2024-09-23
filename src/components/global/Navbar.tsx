@@ -11,7 +11,9 @@ const Navbar = () => {
      <div className="text-[1.7rem]">Scriptor</div>
     </Link>
     <div className="flex items-center gap-3 sm:gap-6">
-     <Link href="/stories">Stories</Link>
+     <Link href="/stories">All Stories</Link>
+    </div>
+    <div>
      <ThemeToggleButton />
     </div>
    </nav>
