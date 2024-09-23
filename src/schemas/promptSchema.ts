@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const promptSchema = z.object({
- prompt: z
+ body: z
   .string()
   .min(10, "Prompt must be at least 10 characters")
   .max(1500, "Prompt cannot exceed 1500 characters")
