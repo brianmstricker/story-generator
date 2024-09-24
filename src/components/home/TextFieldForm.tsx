@@ -31,26 +31,33 @@ const TextFieldForm = () => {
      name="body"
      render={({ field }) => (
       <FormItem className="space-y-2">
-       <FormLabel className="text-lg">What story do you have in mind?</FormLabel>
+       <FormLabel className="text-xl">What story do you have in mind?</FormLabel>
        <FormControl>
-        <Textarea {...field} placeholder="Write your prompt here..." className="w-full border rounded-md p-3 h-[30vh]" />
+        <Textarea {...field} placeholder="Write your prompt here..." className="w-full border rounded-md p-3 h-[30vh] text-base" />
        </FormControl>
+       <FormDescription className="text-[13px]">Example: firefighter fights fire monsters</FormDescription>
        <FormMessage />
       </FormItem>
      )}
     />
     <Button
-     className="mt-5 w-fit mx-auto flex gap-1 items-center text-lg text-white bg-blue-700 hover:bg-blue-700/80"
+     className="mt-6 w-fit mx-auto flex gap-1 items-center text-lg text-white bg-blue-700 hover:bg-blue-700/80"
      disabled={buttonDisabled}
     >
-     <FaFire className="text-base" />
+     <FaFire />
      <span>Generate</span>
     </Button>
-    <div className="text-center my-2.5">or</div>
-    <Button className="w-fit mx-auto flex gap-1 items-center text-lg text-white" disabled={buttonDisabled} variant={"destructive"}>
-     <GiDiceFire className="text-base" />
+    {/* <div className="text-center my-3">or</div>
+    <Button
+     // todo: give this button a proper onClick handler
+     type="button"
+     className="w-fit mx-auto flex gap-1 items-center text-lg text-white"
+     disabled={buttonDisabled}
+     variant={"destructive"}
+    >
+     <GiDiceFire className="text-2xl" />
      <span>Randomize</span>
-    </Button>
+    </Button> */}
    </form>
   </Form>
  );
