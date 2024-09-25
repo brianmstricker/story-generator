@@ -31,7 +31,7 @@ const TextFieldForm = () => {
      name="body"
      render={({ field }) => (
       <FormItem className="space-y-2">
-       <FormLabel className="text-xl">What story do you have in mind?</FormLabel>
+       <FormLabel className="text-2xl">What story do you have in mind?</FormLabel>
        <FormControl>
         <Textarea {...field} placeholder="Write your prompt here..." className="w-full border rounded-md p-3 h-[30vh] text-base" />
        </FormControl>

@@ -1,7 +1,9 @@
 # todo
 
--<https://toolbaz.com/writer/ai-story-generator>
--add images to story
--supabase for auth
--look into adding <https://www.prisma.io/docs/accelerate/getting-started>
--auth with supabase <https://supabase.com/docs/guides/auth/server-side/nextjs?queryGroups=router&router=app>
+--<https://toolbaz.com/writer/ai-story-generator>
+--add images to story
+--supabase for auth
+--look into adding <https://www.prisma.io/docs/accelerate/getting-started>
+--auth with supabase <https://supabase.com/docs/guides/auth/server-side/nextjs?queryGroups=router&router=app>
+--<https://yarnpkg.com/package?q=openai&name=openai>
+--<https://platform.openai.com/docs/api-reference/making-requests>
