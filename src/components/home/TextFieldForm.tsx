@@ -25,13 +25,13 @@ const TextFieldForm = () => {
  const buttonDisabled = submitting;
  return (
   <Form {...form}>
-   <form onSubmit={form.handleSubmit(onSubmit)}>
+   <form className="relative" onSubmit={form.handleSubmit(onSubmit)}>
     <FormField
      control={form.control}
      name="body"
      render={({ field }) => (
       <FormItem className="space-y-2">
-       <FormLabel className="text-2xl">What story do you have in mind?</FormLabel>
+       <FormLabel className="text-lg sm:text-2xl">What story do you have in mind?</FormLabel>
        <FormControl>
         <Textarea {...field} placeholder="Write your prompt here..." className="w-full border rounded-md p-3 h-[30vh] text-base" />
        </FormControl>
@@ -40,24 +40,28 @@ const TextFieldForm = () => {
       </FormItem>
      )}
     />
-    <Button
-     className="mt-6 w-fit mx-auto flex gap-1 items-center text-lg text-white bg-blue-700 hover:bg-blue-700/80"
-     disabled={buttonDisabled}
-    >
-     <FaFire />
-     <span>Generate</span>
-    </Button>
-    {/* <div className="text-center my-3">or</div>
-    <Button
-     // todo: give this button a proper onClick handler
-     type="button"
-     className="w-fit mx-auto flex gap-1 items-center text-lg text-white"
-     disabled={buttonDisabled}
-     variant={"destructive"}
-    >
-     <GiDiceFire className="text-2xl" />
-     <span>Randomize</span>
-    </Button> */}
+    <div className="mt-6 flex items-center justify-center gap-4">
+     <Button
+      className="w-fit min-[810px]:mx-auto flex gap-1 items-center text-sm min-[810px]:text-lg text-white bg-blue-700 hover:bg-blue-700/80"
+      disabled={buttonDisabled}
+     >
+      <FaFire className="text-xl" />
+      <span>Generate</span>
+     </Button>
+     <div className="min-[810px]:absolute min-[810px]:-left-[4.25rem] min-[810px]:top-11">
+      <Button
+       type="button"
+       className="w-fit min-[810px]:mx-auto flex gap-1 items-center relative group"
+       disabled={buttonDisabled}
+       variant={"destructive"}
+      >
+       <GiDiceFire className="text-2xl text-white" />
+       <span className="text-sm min-[810px]:text-xs min-[810px]:absolute min-[810px]:opacity-0 min-[810px]:pointer-events-none group-hover:opacity-100 -bottom-6 text-foreground group-focus:opacity-100 transition-opacity duration-200">
+        Randomize
+       </span>
+      </Button>
+     </div>
+    </div>
    </form>
   </Form>
  );
