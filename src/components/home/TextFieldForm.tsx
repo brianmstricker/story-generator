@@ -10,6 +10,7 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 import { SiSparkpost } from "react-icons/si";
 import { FaFire, FaGripfire } from "react-icons/fa";
 import { GiDiceFire } from "react-icons/gi";
+import { createPrompt } from "@/actions/prompt-actions";
 
 const TextFieldForm = () => {
  const [submitting, setSubmitting] = useState(false);
@@ -19,8 +20,10 @@ const TextFieldForm = () => {
    body: "",
   },
  });
- function onSubmit(values: z.infer<typeof promptSchema>) {
-  console.log(values);
+ async function onSubmit(values: z.infer<typeof promptSchema>) {
+  const { body } = values;
+  const res = await createPrompt();
+  console.log("res", res);
  }
  const buttonDisabled = submitting;
  return (
@@ -53,9 +56,9 @@ const TextFieldForm = () => {
        type="button"
        className="w-fit min-[810px]:mx-auto flex gap-1 items-center relative group"
        disabled={buttonDisabled}
-       variant={"destructive"}
+       variant={"ghost"}
       >
-       <GiDiceFire className="text-2xl text-white" />
+       <GiDiceFire className="text-2xl" />
        <span className="text-sm min-[810px]:text-xs min-[810px]:absolute min-[810px]:opacity-0 min-[810px]:pointer-events-none group-hover:opacity-100 -bottom-6 text-foreground group-focus:opacity-100 transition-opacity duration-200">
         Randomize
        </span>
